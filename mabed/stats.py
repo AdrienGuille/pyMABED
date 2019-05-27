@@ -22,4 +22,8 @@ def erdem_correlation(array_1, array_2):
 def overlap_coefficient(interval_0, interval_1):
     intersection_cardinality = float(min(interval_0[1], interval_1[1]) - max(interval_0[0], interval_1[0]))
     smallest_interval_cardinality = float(min(interval_0[1] - interval_0[0], interval_1[1] - interval_1[0]))
+    
+    if(smallest_interval_cardinality==0):
+        return 0
+    
     return float(intersection_cardinality / smallest_interval_cardinality)
